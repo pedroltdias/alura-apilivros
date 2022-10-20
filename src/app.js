@@ -20,12 +20,6 @@ app.get('/', (req, res) => {
     res.status(200).send('Curso de Node');
 })
 
-app.get('/livros', (req, res) => {
-    livros.find( (err, livros) => {
-        res.status(200).json(livros);
-    });
-})
-
 app.get('/livros/:id', (req, res) => {
     let index = buscaLivro(req.params.id); 
     res.json(livros[index]); 
